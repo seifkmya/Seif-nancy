@@ -1,7 +1,14 @@
-html, body {
+html {
   margin: 0;
   padding: 0;
 }
 canvas {
   display: block;
+}
+
+body {
+    background: rgb(36,226,231);
+    background: linear-gradient(90deg, rgba(36,226,231,1) 18%, rgba(13,158,234,1) 40%, rgba(0,71,168,1) 71%);
+    margin: 0;
+    padding: 0;
 }
