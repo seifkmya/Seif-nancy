@@ -90,8 +90,8 @@ function setup() {
 
 async function loadBot() {
  
-  await bot.loadFile('botbrain.rive.txt'); // wait for promise to resolve then loadfile
- 
+//  await bot.loadFile('botbrain.rive.txt'); // wait for promise to resolve then loadfile
+  await bot.loadFile('rashed.rive.txt'); 
 }
 
 
