@@ -1,5 +1,6 @@
 
-let logo;
+
+ let logo;
 let HumanText;
 let BotText;
 let inp;
@@ -37,16 +38,18 @@ function setup() {
     //text("Enter Here: ",50, height-320)
     inp = createInput('');
     inp.attribute('placeholder',"Please enter your question here!")
-    inp.position(50, height-80);
-    inp.size(windowWidth-350);
+    inp.position(50, height-70);
+    inp.size(windowWidth-350,25);
     inp.input(HumanInputEvent);
 
     //draw button
     sendBtn = createButton('Send');
-    sendBtn.position(width-150, height-300);
-    sendBtn.size(100);
+    sendBtn.position(width-160, height-70);
+    sendBtn.size(120,30);
     sendBtn.mousePressed(submitQuestion);
-
+    sendBtn.style('background-color', "#004ada");
+    sendBtn.style('color', "white");
+    sendBtn.hover()
     
     //navigation button
     navigateBtn = createButton('Use Sound');
@@ -185,26 +188,28 @@ function draw() {
     //draw an empty textbox
     let rectX = width / 2;
     let rectY = height - 125;
-    fill("white");
+    fill("black");
     rectMode(CENTER);
     rect(rectX, rectY, windowWidth - 50, 200, 20);
     
     //Human Text
     textSize(20);
     textAlign(LEFT);
-    fill("black");
+    fill("white");
     if(HumanText == undefined)
         HumanText = "";
     
     text("> Human Text: "+HumanText,(width/15) ,height-200); //draw Human Text within a box
     
     
-    if(BotText == undefined)
-        BotText = "";
-    /*else if(HumanText.includes("hello"))
-        BotText = "Hello There!";
+//    if(BotText == undefined)
+//        BotText = "";
+    if(HumanText.includes("weight is 80"))
+        {
+          BotText = "Hello There!";
+        }
     else if(HumanText.includes("good morning"))
-        BotText = "Good Morning Sir!";*/
+        BotText = "Good Morning Sir!";
     
     //draw Bot text inside the box
     let padding = 20;

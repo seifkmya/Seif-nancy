@@ -13,3 +13,92 @@
 
 + hey
 @ hello
+
++ [*] change life [*]
+@ * Nutrition *
++ [*] develop my body [*]
+@ * Nutrition *
+
++ * bulking *
+- Do you need a nutrition plan or fitness plan or both ?
++ [*] gain weight [*]
+@ * bulking *
++ [*] lose weight [*]
+@ * bulking *
++ [*] lose fat [*]
+@ * bulking *
+
++ * Nutrition Plan *
+- what is your weight and height
++ * fitness plan * 
+- how many days can you go to gym
++ [*] fitness and nutrition [*]
+@ * Nutrition Plan *
++ [*] nutrition and fitness [*]
+@ * Nutrition Plan *
++ [*] both [*] 
+@ * Nutrition Plan *
+
++ * Nutrition Plan *
+- what is your weight and height
++ * fitness plan * 
+- how many days can you go to gym
++ * fitness and nutrition *
+@ * Nutrition Plan *
++ * nutrition and fitness *
+@ * Nutrition Plan *
++ * both * 
+@ * Nutrition Plan *
+
++ i am * years old
+- A lot of people are <star1> years old.
+
++ what is your (home|office|cell) number
+- You can reach me at: 1 (800) 555-1234.
+
++ my name is *
+- Nice to meet you, <star1>!,What is your gender ?
+
++ tell me a poem
+- Little Miss Muffit sat on her tuffet,\n
+^ In a nonchalant sort of way.\n
+^ With her forcefield around her,\n
+^ The Spider, the bounder,\n
+^ Is not in the picture today.
+
++ who are you
+- It doesn't matter who am I. All you need to know is that I am here to listen.
+
++ how many calories in 100gm milk
+- 42 calories
+
++ how many days do i have to go for gym 
+- Depends on your work out plan but you need almosy 3-5 days
+
++ what is the closet gym for me ?
+- where do you exactly live ?
+
++ i live in nasr city 
+- world gym is the best gym in nasr city 
+
++ i live in Helioplis 
+- gold's gym is thr best gym in Helioplis
+
++ What is the best gym in Egypt 
+- gold's gym 
+
++ what pre workouts to take 
+- C4 is the best Prework out to take 
+
++ i need i a diet plane 
+- whats your diet type ( standard / vegeterian) ?
+
++vegeterian 
+- @ * Nutrition Plan *
+
++ standard 
+- @ * Nutrition Plan *
+
++ my weight is *
+- and what is your birth date 
+
