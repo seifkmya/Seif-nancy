@@ -49,7 +49,6 @@ function setup() {
     sendBtn.mousePressed(submitQuestion);
     sendBtn.style('background-color', "#004ada");
     sendBtn.style('color', "white");
-    sendBtn.hover()
     
     //navigation button
     navigateBtn = createButton('Use Sound');
