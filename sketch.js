@@ -1,6 +1,7 @@
-
-
- let logo;
+let botIsResponding = false;
+let botBubble;
+let humanBubble;
+let logo;
 let HumanText;
 let BotText;
 let inp;
@@ -82,11 +83,21 @@ function setup() {
     gotSpeech();
     
     //my Voice
-    myVoice = new p5.Speech(); // new P5.Speech object
+     myVoice = new p5.Speech(); // new P5.Speech object
      myVoice.speak("say something");
     
+     const iconContainer = document.querySelector('.icon-container');
 
-    
+      // Create a new <i> element
+      const icon = document.createElement('i');
+
+      // Add the Font Awesome classes to the element
+      icon.classList.add('fas', 'fa-solid', 'fa-circle-user');
+
+      // Append the element to the container in your HTML
+      iconContainer.appendChild(icon);
+
+
 }
 
 
@@ -120,8 +131,88 @@ function submitQuestion(){
     console.log("Mouse is pressed!");
     HumanText = inp.value();
         getResponse();
-    }, 1000);
+    }, 0.5000);
+    
+    const humanText = inp.value();
+
+  // Append/update the bot text within the chat bubble
+  appendChatBubbleBot(BotText, 'chat__bubble--sent');
+
+  // Append/update the human text within the chat bubble
+  appendChatBubbleHuman(humanText, 'chat__bubble--rcvd');
 }
+
+
+function appendChatBubbleHuman(text, className) {
+  const chatContainer = document.querySelector('.chat');
+
+  // If human bubble already exists, update its content
+  if (humanBubble) {
+    const p = humanBubble.querySelector('p');
+    p.textContent = text;
+    return;
+  }
+
+  // Create a new list item element
+  const li = document.createElement('li');
+  li.classList.add('chat__bubble', className);
+
+  // Create a new paragraph element for the text
+  const p = document.createElement('p');
+  p.textContent = text;
+
+  // Append the paragraph element to the list item
+  li.appendChild(p);
+
+  // Append the list item to the chat container
+  chatContainer.appendChild(li);
+    
+    // Position the chat bubble
+  li.style.position = 'absolute';
+  li.style.left = `${width / 15}px`;
+  li.style.top = `${height - 200}px`;
+
+  // Set the humanBubble variable to the created bubble
+  if (className === 'chat__bubble--rcvd') {
+    humanBubble = li;
+  }
+}
+
+function appendChatBubbleBot(text, className) {
+  const chatContainer = document.querySelector('.chat');
+
+  // If bot bubble already exists, update its content
+  if (botBubble) {
+    const p = botBubble.querySelector('p');
+    p.textContent = text;
+    return;
+  }
+
+  // Create a new list item element
+  const li = document.createElement('li');
+  li.classList.add('chat__bubble', className);
+
+  // Create a new paragraph element for the text
+  const p = document.createElement('p');
+  p.textContent = text;
+
+  // Append the paragraph element to the list item
+  li.appendChild(p);
+
+  // Position the chat bubble
+  li.style.position = 'absolute';
+  li.style.left = `${windowWidth - 400}px`;
+  li.style.top = `${height - 160}px`;
+
+  // Append the list item to the chat container
+  chatContainer.appendChild(li);
+
+  // Set the botBubble variable to the created bubble
+  if (className === 'chat__bubble--sent') {
+    botBubble = li;
+  }
+}
+
 
 function gotSpeech(){
     console.log("gotSpeech")
@@ -150,6 +241,9 @@ async function getResponse(){
     let response = await bot.reply('local-user', HumanText);
     //display response
     console.log(response);
+    
+    // Append bot's response to chat bubbles
+    appendChatBubbleBot(response, 'chat__bubble--rcvd');
     
     BotText = response;
     
@@ -198,7 +292,7 @@ function draw() {
     if(HumanText == undefined)
         HumanText = "";
     
-    text("> Human Text: "+HumanText,(width/15) ,height-200); //draw Human Text within a box
+    /*text("> Human Text: "+HumanText,(width/15) ,height-200); //draw Human Text within a box*/
     
     
 //    if(BotText == undefined)
@@ -216,7 +310,7 @@ function draw() {
     textAlign(RIGHT);
     strokeWeight(1);
     stroke(20);
-    text(BotText+" : Bot Respond <", rectX - padding, rectY + (3*padding), windowWidth - 75, 190); //draw Bot Text within a box
+    /*text(BotText+" : Bot Respond <", rectX - padding, rectY + (3*padding), windowWidth - 75, 190); //draw Bot Text within a box*/
     
     
 

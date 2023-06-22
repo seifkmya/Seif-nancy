@@ -17,3 +17,29 @@ body {
 {
     color: black;
 }
+
+ul.chat {
+  list-style-type: none;
+  width: 20em;
+  padding: 0;
+  margin: 0;
+}
+
+.chat__bubble {
+  margin-bottom: 3px;
+  padding: 5px 10px;
+  border-radius: 10px 10px 2px 2px;
+  max-width: 80%;
+}
+
+.chat__bubble--rcvd {
+  background: #BE48DF;
+  color: black;
+  border-bottom-right-radius: 2px;
+}
+
+.chat__bubble--sent {
+  background: #38B6FF;
+  color: white;
+  border-bottom-left-radius: 2px;
+}
